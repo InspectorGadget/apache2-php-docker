@@ -1,0 +1,14 @@
+version: '3'
+services:
+  httpd:
+    container_name: apache2
+    image: php:8.0-apache
+    ports:
+      - "80:80"
+    networks:
+      - internal
+    volumes:
+      - ./files:/var/www/html
+networks:
+  internal:
+    driver: bridge
